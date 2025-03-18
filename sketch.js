@@ -1,16 +1,23 @@
 // map()
 // map(_,_,_,_,_)
 
-let col = 0;
+let r;
+let b;
+let extraCanvas;
 
 function setup() {
-  createCanvas(600, 400);
+  createCanvas(windowWidth, windowHeight);
+  extraCanvas = createGraphics(400,400)
+  extraCanvas.background(255,0,0);
 }
 
 function draw() {
-  colBackground = map(mouseX, 0, 600, 0, 255)
+  r = map(mouseX, 0, windowWidth, 0, 255);
+  b = map(mouseX, 0,windowWidth, 255, 0);
+
+  console.log(r);
   colCircle = map(mouseY, 0,400, 0, 255)
-  background(colBackground);
+  background(r, 0,b);
   fill(colCircle);
-  ellipse(mouseX, 200, 64, 64);
+  ellipse(mouseX, 300, 64, 64);
 }
